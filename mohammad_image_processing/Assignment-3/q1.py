@@ -8,7 +8,20 @@ width = int((img.shape[1])/7)
 height = int((img.shape[0])/7)
 print(width)
 print(height)
+rows = int(img.shape[0] / height)
+print(rows)
 
-cv.rectangle(img,(width,height),(height,width),(random.randint(0,255),random.randint(0,255),random.randint(0,255)),-1)
-cv.imshow('Frame',img)
-cv.waitKey(0)
+counter = 0
+while (counter<=rows) :
+
+    x = 0
+    y = counter * height
+    y0 = y + height
+    for i in range(1, 8):
+        x0 = x + width
+        cv.rectangle(img, (x, y), (x0, y0),
+                     (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)), -1)
+        x = x0
+        cv.imshow('Frame', img)
+        cv.waitKey(500)
+    counter = counter + 1
