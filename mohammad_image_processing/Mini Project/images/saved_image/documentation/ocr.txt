@@ -1,0 +1,3 @@
+Filestack can detect
+printed and handuritten
+texts using OCR
